@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>每日日历书摘</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="hero">
+        <p class="eyebrow">Daily Reading Calendar</p>
+        <h1>今天也要好好过</h1>
+      </header>
+
+      <main class="layout">
+        <section class="card-panel" aria-labelledby="draw-title">
+          <h2 id="draw-title">开启今天</h2>
+          <button id="open-today-button" type="button">开启今天</button>
+          <p id="today-feedback" aria-live="polite"></p>
+        </section>
+
+        <section class="status-panel" aria-labelledby="today-title">
+          <h2 id="today-title">今日书摘</h2>
+          <div id="today-display"></div>
+        </section>
+
+        <section class="calendar-panel" aria-labelledby="calendar-title">
+          <div class="calendar-header">
+            <button id="prev-month" type="button" aria-label="上个月">‹</button>
+            <h2 id="calendar-title"></h2>
+            <button id="next-month" type="button" aria-label="下个月">›</button>
+          </div>
+          <div id="calendar-grid"></div>
+          <aside id="reading-detail"></aside>
+          <div class="calendar-footer">
+            <h3 id="status-title">阅读概览</h3>
+            <div id="overview-summary"></div>
+          </div>
+        </section>
+
+        <section class="deck-panel" aria-labelledby="deck-title">
+          <div class="deck-panel-header">
+            <div>
+              <h2 id="deck-title">导入书摘</h2>
+              <p class="deck-copy">
+                上传一个 `Excel` 文件，把书摘导入成你的“今日阅读池”。
+              </p>
+            </div>
+            <div class="deck-actions">
+              <label class="import-deck-button" for="import-excel-input">导入书摘Excel</label>
+              <input id="import-excel-input" type="file" accept=".xlsx,.xls" hidden />
+            </div>
+          </div>
+          <p id="import-feedback" aria-live="polite"></p>
+          <div id="import-summary"></div>
+          <div class="import-note">
+            <p>第一版请在 Excel 里使用这些表头：</p>
+            <p><strong>书名</strong> / <strong>标题</strong> / <strong>摘要</strong></p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="./src/app.js"></script>
+  </body>
+</html>
